@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["testdata/test.h5","testdata/test.geom","testdata/test.phil","-h","10","-w","10"],
+            "args": ["../testdata/test.h5","../testdata/test.geom","../testdata/test.phil","-t 10","-w 10"],
             "justMyCode": true
         }
     ]
