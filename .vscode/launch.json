@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["../testdata/grid_scan/grid_scan_5_master.h5","testdata/original_geometry.expt","../testdata/index.phil","-r 5","-c 5","-d 6","-x 0.005","-y  0.005","-s  0.05"],
+            "justMyCode": true
+        }
+    ]
+}
