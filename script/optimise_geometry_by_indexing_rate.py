@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-import h5py
+#!/usr/bin/env python3
+
+import helper_functions
 import numpy as np
 import logging
 logging.basicConfig(filename='log.txt',level=logging.DEBUG)
@@ -31,33 +32,17 @@ def make_and_write_expts(input_expt, n_x:int, n_y:int, n_d:int, i_x:float, i_y:f
     Takes a template .expt file to modify, and the number of points
     and increment size in mm in x, y, and detector distance directions.
     """
-    if n_x == 0:
-        n_x = 1
-        i_x = 0
-        points_x = [0]
-    else: 
-        points_x = np.arange(-(n_x-1)*i_x/2,(n_x+1)*i_x/2,i_x)
-        #if (n_x % 2 == 0): points_x = points_x[:-1]
-    if n_y == 0:
-        n_y = 1
-        i_y = 0
-        points_y = [0]
-    else: 
-        points_y = np.arange(-(n_y-1)*i_y/2,(n_y+1)*i_y/2,i_y)
-        #if (n_y % 2 == 0): points_y = points_y[:-1]
-    if n_d == 0:
-        n_d = 1
-        i_d = 0
-        points_d = [0]
-    else: 
-        points_d = np.arange(-(n_d-1)*i_d/2,(n_d+1)*i_d/2,i_d)
-        #if (n_d % 2 == 0): points_d = points_y[:-1]
-    print(points_x,points_y,points_d)
+    points_x, points_y, points_d = helper_functions.calculate_points(n_x, n_y, n_d, i_x, i_y, i_d)
     files = []
     for x in range(n_x):
         for y in range(n_y):
             for d in range(n_d):
                 logging.info("Preparing geometry file with modifications of (x,y,d): ("+str(points_x[x])+','+str(points_y[y])+','+str(points_d[d])+')')
+                # for deployment:
+                # if not os.path.isdir('geoms'): os.makedirs('geoms')
+                # filename = 'geoms/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
+                #
+                # for writing and debugging:
                 filename = 'testdata/geoms/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
                 modified_expt = copy.copy(input_expt)
                 modified_expt['detector'][0]['panels'][0]['origin'] = list(map( add, 
@@ -100,8 +85,11 @@ def main():
                                 args.x_increment,
                                 args.y_increment,
                                 args.d_increment)
+    
+    n_cores = 16
+    if args.n_cores is not None: n_cores = args.n_cores
     for geomfile in runs:
-        execute_indexing_run(args.input_phil, args.input_hdf5, geomfile)
+        execute_indexing_run(args.input_phil, args.input_hdf5, geomfile, cores=n_cores)
 
 
 

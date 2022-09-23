@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+import helper_functions
 import matplotlib.pyplot as plt
 import os
 import subprocess
 import numpy as np
+import json
 
 def get_args():
     parser = argparse.ArgumentParser(description='Analyse the results of detector position refinement and display results.')
