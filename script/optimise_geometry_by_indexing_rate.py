@@ -39,7 +39,7 @@ def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i
     points_x, points_y, points_d = helper_functions.calculate_points(n_x, n_y, n_d, i_x, i_y, i_d)
     logging.info(f"With: \nx points:{points_x}, \ny points:{points_y}, \ndistance points:{points_d}.")
     files = []
-
+    pointlist = []
     if not os.path.isdir(output_folder): os.makedirs(output_folder)
     for x in range(n_x):
         for y in range(n_y):
@@ -47,6 +47,7 @@ def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i
                 logging.info("Preparing geometry file with modifications of (x,y,d): ("+str(points_x[x])+','+str(points_y[y])+','+str(points_d[d])+')')
                 filename = output_folder+'/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
                 modified_expt = copy.copy(input_expt)
+                pointlist.append(([x], points_y[y], points_d[d]))
                 modified_expt['detector'][0]['panels'][0]['origin'] = list(map( add, 
                                                                                 input_expt['detector'][0]['panels'][0]['origin'], 
                                                                                 [points_x[x], points_y[y], points_d[d]] ))
@@ -57,6 +58,13 @@ def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i
                     json.dump(modified_expt, f, indent=2)
 
     parameters = {}
+    parameters['pointlist'] = pointlist
+    parameters['n_x'] = n_x
+    parameters['n_y'] = n_y
+    parameters['n_d'] = n_d
+    parameters['i_x'] = i_x
+    parameters['i_y'] = i_y
+    parameters['i_d'] = i_d
     parameters['points_x'] = list(points_x)
     parameters['points_y'] = list(points_y)
     parameters['points_d'] = list(points_d)

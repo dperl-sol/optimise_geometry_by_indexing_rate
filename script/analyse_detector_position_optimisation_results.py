@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from symbol import parameters
 import helper_functions
 import matplotlib.pyplot as plt
 import os
@@ -29,7 +30,7 @@ def display_2d_results(data, n_a:int, n_b:int, i_a:float, i_b:float):
     plt.show()
 
 
-def load_results_from_folders(dim_a:int, dim_b:int):
+def load_results_from_folders(dims):
     """ In the absence of a file with proper parameters, attempt to look at the output folders.
     """
     outfolders = [x for x in os.listdir('..') if x.endswith('out')]
@@ -40,14 +41,22 @@ def load_results_from_folders(dim_a:int, dim_b:int):
         print(int(imgs.stdout.decode()))
         images_indexed.append(int(imgs.stdout.decode()))
 
-    grid = np.reshape(images_indexed, (dim_a, dim_b)).transpose()
-    print(grid)
+    grid = np.reshape(images_indexed, dims, order='F')
+    names = np.reshape(outfolders, dims, order='F')
+
     return grid
 
 def main():
-    os.chdir('/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/process/optimise_geom/geoms/analysis')
-    data = load_results_from_folders(4, 4)
-    display_2d_results(data, 4, 4, 0.007, 0.007)
+    os.chdir('/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/process/optimise_geom/grid_7by7/analysis')
+    with open('parameters.json') as f:
+        parameters = json.load(f)
+    
+    dims = (parameters['n_x'],parameters['n_y'],parameters['n_d'])
+    incrs = (parameters['i_x'],parameters['i_y'],parameters['i_d'])
+    data = np.squeeze(load_results_from_folders(dims))
+
+    if dims[2] == 1:
+        display_2d_results(data, dims[0], dims[1], incrs[0], incrs[1])
 
 if __name__ == '__main__':
     main()

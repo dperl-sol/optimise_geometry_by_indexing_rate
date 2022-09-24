@@ -13940,3 +13940,636 @@ INFO:root:writing to file: testdata/geoms/6_6_0.expt
 
 INFO:root:writing parameters to testdata/geoms/parameters.json
 INFO:root:Ending test run.
+INFO:root:Running refinement of detector position by indexing rate.
+INFO:root:Namespace(d_increment=0.05, input_geom='testdata/original_geometry.expt', input_hdf5='testdata/grid_scan/grid_scan_5_master.h5', input_phil='testdata/index.phil', n_columns=7, n_cores=64, n_distance=1, n_rows=7, output_folder='testdata/geoms', test_run=True, x_increment=0.007, y_increment=0.007)
+INFO:root:{'__id__': 'ExperimentList', 'experiment': [{'__id__': 'Experiment', 'identifier': '', 'beam': 0, 'detector': 0, 'goniometer': 0, 'scan': 0, 'crystal': 0, 'imageset': 0}], 'imageset': [{'__id__': 'ImageSet', 'images': ['/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/grid_scan_2_master.h5'], 'single_file_indices': [120], 'mask': None, 'gain': None, 'pedestal': None, 'dx': None, 'dy': None, 'params': {}}], 'beam': [{'direction': [-0.0, -0.0, 1.0], 'wavelength': 0.7293154055537332, 'divergence': 0.0, 'sigma_divergence': 0.0, 'polarization_normal': [0.0, 1.0, 0.0], 'polarization_fraction': 0.999, 'flux': 0.0, 'transmission': 1.0}], 'detector': [{'panels': [{'name': '/entry/instrument/detector', 'type': 'SENSOR_PAD', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, -1.0, 0.0], 'origin': [-109.78029566145698, 129.73558387046813, -119.99998161316017], 'raw_image_offset': [0, 0], 'image_size': [3110, 3269], 'pixel_size': [0.075, 0.075], 'trusted_range': [-2147483647.0, 59991.0], 'thickness': 0.45, 'material': 'Si', 'mu': 1.6716945655972695, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'ParallaxCorrectedPxMmStrategy'}}], 'hierarchy': {'name': '', 'type': '', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, 1.0, 0.0], 'origin': [0.0, 0.0, 0.0], 'raw_image_offset': [0, 0], 'image_size': [0, 0], 'pixel_size': [0.0, 0.0], 'trusted_range': [0.0, 0.0], 'thickness': 0.0, 'material': '', 'mu': 0.0, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'SimplePxMmStrategy'}, 'children': [{'panel': 0}]}}], 'goniometer': [{'rotation_axis': [1.0, 0.0, 0.0], 'fixed_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], 'setting_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]}], 'scan': [{'image_range': [121, 121], 'batch_offset': 0, 'oscillation': [355.0, 0.0], 'exposure_time': [0.02], 'epochs': [2.4000000000000017], 'valid_image_ranges': {}}], 'crystal': [{'__id__': 'crystal', 'real_space_a': [-5.9325583577098495, -9.084527376632117, 10.787312625282944], 'real_space_b': [1.8347746473984865, 2.504290258469964, 3.118033401776868], 'real_space_c': [-20.260980931778544, 15.634878674358866, -0.6349964725769014], 'space_group_hall_symbol': '-C 2yc (x+z,y,-x)', 'ML_half_mosaicity_deg': 0.062347528640109125, 'ML_domain_size_ang': 7081.312715757752}], 'profile': [], 'scaling_model': []}
+INFO:root:Preparing new geometry files.
+INFO:root:With: 
+x points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+y points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+distance points:[0].
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.0245,0)
+INFO:root:Running refinement of detector position by indexing rate.
+INFO:root:Namespace(d_increment=0.05, input_geom='testdata/original_geometry.expt', input_hdf5='testdata/grid_scan/grid_scan_5_master.h5', input_phil='testdata/index.phil', n_columns=7, n_cores=64, n_distance=1, n_rows=7, output_folder='testdata/geoms', test_run=True, x_increment=0.007, y_increment=0.007)
+INFO:root:{'__id__': 'ExperimentList', 'experiment': [{'__id__': 'Experiment', 'identifier': '', 'beam': 0, 'detector': 0, 'goniometer': 0, 'scan': 0, 'crystal': 0, 'imageset': 0}], 'imageset': [{'__id__': 'ImageSet', 'images': ['/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/grid_scan_2_master.h5'], 'single_file_indices': [120], 'mask': None, 'gain': None, 'pedestal': None, 'dx': None, 'dy': None, 'params': {}}], 'beam': [{'direction': [-0.0, -0.0, 1.0], 'wavelength': 0.7293154055537332, 'divergence': 0.0, 'sigma_divergence': 0.0, 'polarization_normal': [0.0, 1.0, 0.0], 'polarization_fraction': 0.999, 'flux': 0.0, 'transmission': 1.0}], 'detector': [{'panels': [{'name': '/entry/instrument/detector', 'type': 'SENSOR_PAD', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, -1.0, 0.0], 'origin': [-109.78029566145698, 129.73558387046813, -119.99998161316017], 'raw_image_offset': [0, 0], 'image_size': [3110, 3269], 'pixel_size': [0.075, 0.075], 'trusted_range': [-2147483647.0, 59991.0], 'thickness': 0.45, 'material': 'Si', 'mu': 1.6716945655972695, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'ParallaxCorrectedPxMmStrategy'}}], 'hierarchy': {'name': '', 'type': '', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, 1.0, 0.0], 'origin': [0.0, 0.0, 0.0], 'raw_image_offset': [0, 0], 'image_size': [0, 0], 'pixel_size': [0.0, 0.0], 'trusted_range': [0.0, 0.0], 'thickness': 0.0, 'material': '', 'mu': 0.0, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'SimplePxMmStrategy'}, 'children': [{'panel': 0}]}}], 'goniometer': [{'rotation_axis': [1.0, 0.0, 0.0], 'fixed_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], 'setting_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]}], 'scan': [{'image_range': [121, 121], 'batch_offset': 0, 'oscillation': [355.0, 0.0], 'exposure_time': [0.02], 'epochs': [2.4000000000000017], 'valid_image_ranges': {}}], 'crystal': [{'__id__': 'crystal', 'real_space_a': [-5.9325583577098495, -9.084527376632117, 10.787312625282944], 'real_space_b': [1.8347746473984865, 2.504290258469964, 3.118033401776868], 'real_space_c': [-20.260980931778544, 15.634878674358866, -0.6349964725769014], 'space_group_hall_symbol': '-C 2yc (x+z,y,-x)', 'ML_half_mosaicity_deg': 0.062347528640109125, 'ML_domain_size_ang': 7081.312715757752}], 'profile': [], 'scaling_model': []}
+INFO:root:Preparing new geometry files.
+INFO:root:With: 
+x points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+y points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+distance points:[0].
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.0245,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.01633333333333333,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.008166666666666666,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.00816666666666667,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.01633333333333334,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.0245,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.01633333333333333,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.008166666666666666,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.00816666666666667,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.01633333333333334,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.0245,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.01633333333333333,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.008166666666666666,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.00816666666666667,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.01633333333333334,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.0245,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.01633333333333333,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.008166666666666666,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.00816666666666667,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.01633333333333334,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.0245,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.01633333333333333,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.008166666666666666,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.00816666666666667,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.01633333333333334,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.0245,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.01633333333333333,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.008166666666666666,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.00816666666666667,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.01633333333333334,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.0245,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.01633333333333333,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.008166666666666666,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.00816666666666667,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.01633333333333334,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0245,0)
+INFO:root:[-109.78029566145698, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_6_0.expt
+
+INFO:root:Running refinement of detector position by indexing rate.
+INFO:root:Namespace(d_increment=0.05, input_geom='testdata/original_geometry.expt', input_hdf5='testdata/grid_scan/grid_scan_5_master.h5', input_phil='testdata/index.phil', n_columns=7, n_cores=64, n_distance=1, n_rows=7, output_folder='testdata/geoms', test_run=True, x_increment=0.007, y_increment=0.007)
+INFO:root:{'__id__': 'ExperimentList', 'experiment': [{'__id__': 'Experiment', 'identifier': '', 'beam': 0, 'detector': 0, 'goniometer': 0, 'scan': 0, 'crystal': 0, 'imageset': 0}], 'imageset': [{'__id__': 'ImageSet', 'images': ['/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/grid_scan_2_master.h5'], 'single_file_indices': [120], 'mask': None, 'gain': None, 'pedestal': None, 'dx': None, 'dy': None, 'params': {}}], 'beam': [{'direction': [-0.0, -0.0, 1.0], 'wavelength': 0.7293154055537332, 'divergence': 0.0, 'sigma_divergence': 0.0, 'polarization_normal': [0.0, 1.0, 0.0], 'polarization_fraction': 0.999, 'flux': 0.0, 'transmission': 1.0}], 'detector': [{'panels': [{'name': '/entry/instrument/detector', 'type': 'SENSOR_PAD', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, -1.0, 0.0], 'origin': [-109.78029566145698, 129.73558387046813, -119.99998161316017], 'raw_image_offset': [0, 0], 'image_size': [3110, 3269], 'pixel_size': [0.075, 0.075], 'trusted_range': [-2147483647.0, 59991.0], 'thickness': 0.45, 'material': 'Si', 'mu': 1.6716945655972695, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'ParallaxCorrectedPxMmStrategy'}}], 'hierarchy': {'name': '', 'type': '', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, 1.0, 0.0], 'origin': [0.0, 0.0, 0.0], 'raw_image_offset': [0, 0], 'image_size': [0, 0], 'pixel_size': [0.0, 0.0], 'trusted_range': [0.0, 0.0], 'thickness': 0.0, 'material': '', 'mu': 0.0, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'SimplePxMmStrategy'}, 'children': [{'panel': 0}]}}], 'goniometer': [{'rotation_axis': [1.0, 0.0, 0.0], 'fixed_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], 'setting_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]}], 'scan': [{'image_range': [121, 121], 'batch_offset': 0, 'oscillation': [355.0, 0.0], 'exposure_time': [0.02], 'epochs': [2.4000000000000017], 'valid_image_ranges': {}}], 'crystal': [{'__id__': 'crystal', 'real_space_a': [-5.9325583577098495, -9.084527376632117, 10.787312625282944], 'real_space_b': [1.8347746473984865, 2.504290258469964, 3.118033401776868], 'real_space_c': [-20.260980931778544, 15.634878674358866, -0.6349964725769014], 'space_group_hall_symbol': '-C 2yc (x+z,y,-x)', 'ML_half_mosaicity_deg': 0.062347528640109125, 'ML_domain_size_ang': 7081.312715757752}], 'profile': [], 'scaling_model': []}
+INFO:root:Preparing new geometry files.
+INFO:root:With: 
+x points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+y points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+distance points:[0].
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.0245,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.01633333333333333,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.008166666666666666,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.00816666666666667,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.01633333333333334,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.0245,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.01633333333333333,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.008166666666666666,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.00816666666666667,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.01633333333333334,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.0245,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.01633333333333333,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.008166666666666666,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.00816666666666667,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.01633333333333334,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.0245,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.01633333333333333,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.008166666666666666,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.00816666666666667,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.01633333333333334,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.0245,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.01633333333333333,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.008166666666666666,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.00816666666666667,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.01633333333333334,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.0245,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.01633333333333333,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.008166666666666666,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.00816666666666667,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.01633333333333334,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.0245,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.01633333333333333,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.008166666666666666,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.00816666666666667,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.01633333333333334,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0245,0)
+INFO:root:[-109.78029566145698, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_6_0.expt
+
+INFO:root:writing parameters to testdata/geoms/parameters.json
+INFO:root:Ending test run.
+INFO:root:Running refinement of detector position by indexing rate.
+INFO:root:Namespace(d_increment=0.05, input_geom='testdata/original_geometry.expt', input_hdf5='testdata/grid_scan/grid_scan_5_master.h5', input_phil='testdata/index.phil', n_columns=7, n_cores=64, n_distance=1, n_rows=7, output_folder='testdata/geoms', test_run=True, x_increment=0.007, y_increment=0.007)
+INFO:root:{'__id__': 'ExperimentList', 'experiment': [{'__id__': 'Experiment', 'identifier': '', 'beam': 0, 'detector': 0, 'goniometer': 0, 'scan': 0, 'crystal': 0, 'imageset': 0}], 'imageset': [{'__id__': 'ImageSet', 'images': ['/nfs/data2/2022_Run4/com-proxima2a/2022-09-11/RAW_DATA/IHR/David/GasCell/MUF16_CO2/single_test_wedges/1_2_bar/grid_scan_2_master.h5'], 'single_file_indices': [120], 'mask': None, 'gain': None, 'pedestal': None, 'dx': None, 'dy': None, 'params': {}}], 'beam': [{'direction': [-0.0, -0.0, 1.0], 'wavelength': 0.7293154055537332, 'divergence': 0.0, 'sigma_divergence': 0.0, 'polarization_normal': [0.0, 1.0, 0.0], 'polarization_fraction': 0.999, 'flux': 0.0, 'transmission': 1.0}], 'detector': [{'panels': [{'name': '/entry/instrument/detector', 'type': 'SENSOR_PAD', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, -1.0, 0.0], 'origin': [-109.78029566145698, 129.73558387046813, -119.99998161316017], 'raw_image_offset': [0, 0], 'image_size': [3110, 3269], 'pixel_size': [0.075, 0.075], 'trusted_range': [-2147483647.0, 59991.0], 'thickness': 0.45, 'material': 'Si', 'mu': 1.6716945655972695, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'ParallaxCorrectedPxMmStrategy'}}], 'hierarchy': {'name': '', 'type': '', 'fast_axis': [1.0, 0.0, 0.0], 'slow_axis': [0.0, 1.0, 0.0], 'origin': [0.0, 0.0, 0.0], 'raw_image_offset': [0, 0], 'image_size': [0, 0], 'pixel_size': [0.0, 0.0], 'trusted_range': [0.0, 0.0], 'thickness': 0.0, 'material': '', 'mu': 0.0, 'identifier': '', 'mask': [], 'gain': 1.0, 'pedestal': 0.0, 'px_mm_strategy': {'type': 'SimplePxMmStrategy'}, 'children': [{'panel': 0}]}}], 'goniometer': [{'rotation_axis': [1.0, 0.0, 0.0], 'fixed_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], 'setting_rotation': [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]}], 'scan': [{'image_range': [121, 121], 'batch_offset': 0, 'oscillation': [355.0, 0.0], 'exposure_time': [0.02], 'epochs': [2.4000000000000017], 'valid_image_ranges': {}}], 'crystal': [{'__id__': 'crystal', 'real_space_a': [-5.9325583577098495, -9.084527376632117, 10.787312625282944], 'real_space_b': [1.8347746473984865, 2.504290258469964, 3.118033401776868], 'real_space_c': [-20.260980931778544, 15.634878674358866, -0.6349964725769014], 'space_group_hall_symbol': '-C 2yc (x+z,y,-x)', 'ML_half_mosaicity_deg': 0.062347528640109125, 'ML_domain_size_ang': 7081.312715757752}], 'profile': [], 'scaling_model': []}
+INFO:root:Preparing new geometry files.
+INFO:root:With: 
+x points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+y points:[-0.0245     -0.01633333 -0.00816667  0.          0.00816667  0.01633333
+  0.0245    ], 
+distance points:[0].
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.0245,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.01633333333333333,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,-0.008166666666666666,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.00816666666666667,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.01633333333333334,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.0245,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/0_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.0245,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.01633333333333333,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,-0.008166666666666666,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.00816666666666667,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.01633333333333334,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.01633333333333333,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/1_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.0245,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.01633333333333333,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,-0.008166666666666666,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.00816666666666667,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.01633333333333334,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (-0.008166666666666666,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/2_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.0245,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.01633333333333333,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,-0.008166666666666666,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0,0)
+INFO:root:[-110.12329566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.00816666666666667,0)
+INFO:root:[-110.12329566145702, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.01633333333333334,0)
+INFO:root:[-110.12329566145702, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0,0.0245,0)
+INFO:root:[-110.12329566145702, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/3_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.0245,0)
+INFO:root:[-110.11512899479035, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.01633333333333333,0)
+INFO:root:[-110.10696232812369, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,-0.008166666666666666,0)
+INFO:root:[-110.09879566145702, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0,0)
+INFO:root:[-110.09062899479035, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.00816666666666667,0)
+INFO:root:[-110.08246232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.01633333333333334,0)
+INFO:root:[-110.07429566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.00816666666666667,0.0245,0)
+INFO:root:[-110.06612899479035, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/4_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.0245,0)
+INFO:root:[-110.04979566145701, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.01633333333333333,0)
+INFO:root:[-110.03346232812368, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,-0.008166666666666666,0)
+INFO:root:[-110.01712899479034, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0,0)
+INFO:root:[-110.000795661457, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.00816666666666667,0)
+INFO:root:[-109.98446232812367, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.01633333333333334,0)
+INFO:root:[-109.96812899479033, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.01633333333333334,0.0245,0)
+INFO:root:[-109.951795661457, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/5_6_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.0245,0)
+INFO:root:[-109.927295661457, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_0_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.01633333333333333,0)
+INFO:root:[-109.90279566145699, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_1_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,-0.008166666666666666,0)
+INFO:root:[-109.87829566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_2_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0,0)
+INFO:root:[-109.85379566145699, 129.68658387046816, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_3_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.00816666666666667,0)
+INFO:root:[-109.82929566145698, 129.6947505371348, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_4_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.01633333333333334,0)
+INFO:root:[-109.80479566145698, 129.71108387046814, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_5_0.expt
+
+INFO:root:Preparing geometry file with modifications of (x,y,d): (0.0245,0.0245,0)
+INFO:root:[-109.78029566145698, 129.73558387046813, -119.99998161316017]
+INFO:root:writing to file: testdata/geoms/6_6_0.expt
+
+INFO:root:writing parameters to testdata/geoms/parameters.json
+INFO:root:Ending test run.
