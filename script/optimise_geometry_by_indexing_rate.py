@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from symbol import parameters
 import helper_functions
 import numpy as np
 import logging
@@ -17,33 +18,34 @@ def get_args():
     parser.add_argument('input_hdf5',help='hdf5 file to refine on')
     parser.add_argument('input_geom',help='expt file with original geometry')
     parser.add_argument('input_phil',help='phil file for cctbx.small_cell indexing instructions')
-    parser.add_argument('-r', '--n_rows', help='Number of grid points in y direction', type=int, default=0)
-    parser.add_argument('-c', '--n_columns', help='Number of grid points in x direction', type=int, default=0)
-    parser.add_argument('-d', '--n_distance', help='Number of grid points in detector distance', type=int, default=0)
+    parser.add_argument('-r', '--n_rows', help='Number of grid points in y direction', type=int, default=1)
+    parser.add_argument('-c', '--n_columns', help='Number of grid points in x direction', type=int, default=1)
+    parser.add_argument('-d', '--n_distance', help='Number of grid points in detector distance', type=int, default=1)
     parser.add_argument('-x','--y_increment', help='Grid point increment in y direction in mm', type=float, default=0.01)
     parser.add_argument('-y','--x_increment', help='Grid point increment in x direction in mm', type=float, default=0.01)
     parser.add_argument('-s','--d_increment', help='Grid point increment in detector distance in mm', type=float, default=0.05)
     parser.add_argument('-n', '--n_cores', help='Number of cores to use for cctbx.small_cell_process', type=int, default=64)
+    parser.add_argument('-o', '--output_folder', help='Folder (will be created if it doesn\'t exist) to write new files to', type=str, default='testdata/optimisation_output')
+    parser.add_argument('-t', '--test_run', help='Don\'t perform the actual indexing runs, just generate the geometry files.', action='store_true')
     return parser.parse_args()
 
-def make_and_write_expts(input_expt, n_x:int, n_y:int, n_d:int, i_x:float, i_y:float, i_d:float):
+def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i_x:float, i_y:float, i_d:float):
     """ Write DIALS .expt files with modified detector geometry,
     and return the filenames written as a list of strings.
     Takes a template .expt file to modify, and the number of points
     and increment size in mm in x, y, and detector distance directions.
     """
+    logging.info("Preparing new geometry files.")
     points_x, points_y, points_d = helper_functions.calculate_points(n_x, n_y, n_d, i_x, i_y, i_d)
+    logging.info(f"With: \nx points:{points_x}, \ny points:{points_y}, \ndistance points:{points_d}.")
     files = []
+
+    if not os.path.isdir(output_folder): os.makedirs(output_folder)
     for x in range(n_x):
         for y in range(n_y):
             for d in range(n_d):
                 logging.info("Preparing geometry file with modifications of (x,y,d): ("+str(points_x[x])+','+str(points_y[y])+','+str(points_d[d])+')')
-                # for deployment:
-                # if not os.path.isdir('geoms'): os.makedirs('geoms')
-                # filename = 'geoms/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
-                #
-                # for writing and debugging:
-                filename = 'testdata/geoms/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
+                filename = output_folder+'/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
                 modified_expt = copy.copy(input_expt)
                 modified_expt['detector'][0]['panels'][0]['origin'] = list(map( add, 
                                                                                 input_expt['detector'][0]['panels'][0]['origin'], 
@@ -53,6 +55,15 @@ def make_and_write_expts(input_expt, n_x:int, n_y:int, n_d:int, i_x:float, i_y:f
                 files.append(filename)
                 with open(filename, 'w') as f:
                     json.dump(modified_expt, f, indent=2)
+
+    parameters = {}
+    parameters['points_x'] = list(points_x)
+    parameters['points_y'] = list(points_y)
+    parameters['points_d'] = list(points_d)
+    parameters['geom_files'] = files
+    logging.info('writing parameters to '+output_folder+'/parameters.json')
+    with open(output_folder+'/parameters.json','w') as f:
+        json.dump(parameters, f, indent=2)
                 
     return files
 
@@ -75,10 +86,18 @@ def execute_indexing_run(philfile:str, datafile:str, geomfile:str, cores:int=16)
 
 
 def main():
+    logging.info("Running refinement of detector position by indexing rate.")
     args = get_args()
+    logging.info(args)
     with open(args.input_geom) as f:
         initial_geometry = json.load(f)
+    
+    if args.n_columns == 0: args.n_columns = 1
+    if args.n_rows == 0: args.n_rows = 1
+    if args.n_distance == 0: args.n_distance = 1
+    logging.info(initial_geometry)
     runs = make_and_write_expts(initial_geometry, 
+                                args.output_folder,
                                 args.n_columns,
                                 args.n_rows,
                                 args.n_distance,
@@ -86,6 +105,9 @@ def main():
                                 args.y_increment,
                                 args.d_increment)
     
+    if args.test_run: 
+        logging.info('Ending test run.')
+        return
     n_cores = 16
     if args.n_cores is not None: n_cores = args.n_cores
     for geomfile in runs:
