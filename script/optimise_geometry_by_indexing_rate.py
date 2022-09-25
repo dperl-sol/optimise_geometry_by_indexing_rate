@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from symbol import parameters
 import helper_functions
+import analyse_detector_position_optimisation_results as result_analysis
 import numpy as np
 import logging
 logging.basicConfig(filename='log.txt',level=logging.DEBUG)
@@ -27,6 +27,7 @@ def get_args():
     parser.add_argument('-n', '--n_cores', help='Number of cores to use for cctbx.small_cell_process', type=int, default=64)
     parser.add_argument('-o', '--output_folder', help='Folder (will be created if it doesn\'t exist) to write new files to', type=str, default='testdata/optimisation_output')
     parser.add_argument('-t', '--test_run', help='Don\'t perform the actual indexing runs, just generate the geometry files.', action='store_true')
+    parser.add_argument('-p', '--plot_results', help='After completing indexing runs, analyse and display results.', action='store_true')
     return parser.parse_args()
 
 def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i_x:float, i_y:float, i_d:float):
@@ -69,8 +70,9 @@ def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i
     parameters['points_y'] = list(points_y)
     parameters['points_d'] = list(points_d)
     parameters['geom_files'] = files
+    if not os.path.isdir(output_folder+'/analysis'): os.makedirs(output_folder+'/analysis')
     logging.info('writing parameters to '+output_folder+'/parameters.json')
-    with open(output_folder+'/parameters.json','w') as f:
+    with open(output_folder+'/analysis/parameters.json','w') as f:
         json.dump(parameters, f, indent=2)
                 
     return files
@@ -116,10 +118,32 @@ def main():
     if args.test_run: 
         logging.info('Ending test run.')
         return
+
+    logging.info('Preforming indexing runs.')
     n_cores = 16
     if args.n_cores is not None: n_cores = args.n_cores
     for geomfile in runs:
         execute_indexing_run(args.input_phil, args.input_hdf5, geomfile, cores=n_cores)
+
+    if not args.plot_results:
+        logging.info('Analysis and result display disabled, run completed.')
+        return
+
+    results_grid = result_analysis.load_results_from_list(runs)
+
+    if args.n_distance == 1:
+        result_analysis.display_2d_results( results_grid, 
+                                            args.n_columns, 
+                                            args.n_rows, 
+                                            args.x_increment, 
+                                            args.y_increment, 
+                                            'x increment from original geometry', 
+                                            'y increment from original geometry')
+    if args.n_columns == 1 and args.n_rows == 1:
+        result_analysis.display_1d_results( results_grid, 
+                                            args.n_distance, 
+                                            args.d_increment, 
+                                            'distance increment from original geometry')
 
 
 
