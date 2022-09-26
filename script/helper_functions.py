@@ -25,3 +25,16 @@ def calculate_points(n_x:int, n_y:int, n_d:int, i_x:float, i_y:float, i_d:float)
         if n_d % 2 == 1: points_d = np.linspace((-(n_d - 1)/2.0)*i_d, ((n_d - 1)/2.0)*i_d, n_d)
         else: points_d = np.linspace(-(n_d/2.0)*i_d, (n_d/2.0)*i_d, n_d)
     return(points_x,points_y,points_d)
+
+def clean_initial_geometry(geom):
+    if len(geom['experiment']) == 1: return geom
+
+    geom['experiment'] = geom['experiment'][0:1]
+    geom['imageset'] = geom['imageset'][0:1]
+    geom['beam'] = geom['beam'][0:1]
+    geom['detector'] = geom['detector'][0:1]
+    geom['goniometer'] = geom['goniometer'][0:1]
+    geom['scan'] = geom['scan'][0:1]
+    geom['crystal'] = geom['crystal'][0:1]
+
+    return geom

@@ -46,13 +46,15 @@ def make_and_write_expts(input_expt, output_folder, n_x:int, n_y:int, n_d:int, i
         for y in range(n_y):
             for d in range(n_d):
                 logging.info("Preparing geometry file with modifications of (x,y,d): ("+str(points_x[x])+','+str(points_y[y])+','+str(points_d[d])+')')
+                logging.info('Starting origin: '+str(input_expt['detector'][0]['panels'][0]['origin']))
                 filename = output_folder+'/'+str(x)+'_'+str(y)+'_'+str(d)+'.expt'
-                modified_expt = copy.copy(input_expt)
-                pointlist.append(([x], points_y[y], points_d[d]))
-                modified_expt['detector'][0]['panels'][0]['origin'] = list(map( add, 
-                                                                                input_expt['detector'][0]['panels'][0]['origin'], 
-                                                                                [points_x[x], points_y[y], points_d[d]] ))
-                logging.info(str(modified_expt['detector'][0]['panels'][0]['origin']))
+                modified_expt = copy.deepcopy(input_expt)
+                pointlist.append((points_x[x], points_y[y], points_d[d]))
+                old_point = input_expt['detector'][0]['panels'][0]['origin']
+                modification = [points_x[x], points_y[y], points_d[d]]
+                new_point = list(map(add, old_point, modification))
+                logging.info('New origin: '+str(new_point))
+                modified_expt['detector'][0]['panels'][0]['origin'] = new_point
                 logging.info("writing to file: "+filename+'\n')
                 files.append(filename)
                 with open(filename, 'w') as f:
@@ -96,11 +98,14 @@ def execute_indexing_run(philfile:str, datafile:str, geomfile:str, cores:int=16)
 
 
 def main():
-    logging.info("Running refinement of detector position by indexing rate.")
     args = get_args()
+
+    logging.info("Running refinement of detector position by indexing rate.")
     logging.info(args)
     with open(args.input_geom) as f:
         initial_geometry = json.load(f)
+
+    initial_geometry = helper_functions.clean_initial_geometry(initial_geometry)
     
     if args.n_columns == 0: args.n_columns = 1
     if args.n_rows == 0: args.n_rows = 1
